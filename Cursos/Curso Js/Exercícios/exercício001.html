@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    
+    <style>
+
+        body{
+
+            background-color: rgb(36, 61, 61);
+            color: antiquewhite;
+            font: normal 20pt Arial;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #css{
+
+            background-color: antiquewhite;
+            color: #0d1025;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 700;
+            border-radius: 10px;
+            margin-top: 10px;
+
+
+        }
+
+        #css:hover{
+            background-color: rgb(170, 161, 148);
+        }
+
+
+
+        #pais{
+
+            background-color: rgb(253, 248, 241);
+            color: #0d1025;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 700;
+            border-radius: 10px;
+            margin-top: 10px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>De qual pais você é ?</h1>
+    ( Escreva com a primeira letra MAIÚSCULA)<br>
+    <input type="text" name="Resposta" id="pais"><br>
+    <input type="button" value="Click" id="css" ><br>
+    <div id="res"> Aguardando o pais </div>
+
+    <script>
+
+        var a = window.document.getElementById('css')
+        a.addEventListener("click", click)
+
+        function click(){
+            
+            var p = window.document.querySelector('input#pais')
+
+            if (p.value == 'Brasil'){
+
+                res.innerHTML = `Parabéns, você é brasileiro, pois vive no ${p.value}`
+
+            } else{
+                res.innerHTML = `😡, Você é estrangeiro, pois vive em ${p.value}`
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

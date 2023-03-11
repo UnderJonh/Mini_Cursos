@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background">
+      <div class="divform">
+        <h1 class="txt">Login</h1>
+        <form action="#" class="fm" id="form">
+            <h3>Usuário</h3>
+            <input type="email" name="" id="username" placeholder="Username">
+            <h3>Senha</h3>
+            <input type="password" name="" id="password" placeholder="Password"><br>
+            <button type="submit" id="btn1">Verificar</button>
+            <div id="alerta">Senha ou usuário incorreto</div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+        //script feito com ajuda de chat gpt da open ia
+        var alerta = document.getElementById('alerta');
+        var form = document.getElementById('form');
+        var btn = document.getElementById('btn1');
+        btn.addEventListener('click', click);
+        form.addEventListener('onmouseover', hoverform);
+
+
+        function click(event) {
+            event.preventDefault(); // evita o comportamento padrão do botão de enviar
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === '123') {
+                window.location.href = "pagina2.html";
+            } else {
+                alerta.style.display = "block";
+                var opacidade = 0;
+                var intervalo = setInterval(function() {
+                    if (opacidade < 1) {
+                        opacidade += 0.1;
+                        alerta.style.opacity = opacidade;
+                    } else {
+                        clearInterval(intervalo);
+                    }
+                }, 50);
+            }
+        }
+
+        function hoverform(event){
+
+            window.location.href = "pagina2.html";
+
+        }
+    </script>
+</body>
+</html>
